@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Health Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* CSS for section fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CSS for text-level animation within visible sections */
+        .fade-in-section h2,
+        .fade-in-section h3,
+        .fade-in-section p,
+        .fade-in-section ul,
+        .fade-in-section form {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible h2 {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        
+        .fade-in-section.is-visible h3,
+        .fade-in-section.is-visible img {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.3s;
+        }
+        
+        .fade-in-section.is-visible p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.4s;
+        }
+        
+        .fade-in-section.is-visible ul {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+        
+        .fade-in-section.is-visible form {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.6s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-sky-600">
+                Pregnancy Health Hub
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">About</a>
+                <a href="#placenta-previa" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">Placenta Previa</a>
+                <a href="#resources" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">Resources</a>
+                <a href="#contact" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">Contact</a>
+            </nav>
+            <button class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-sky-400 to-cyan-500 text-white py-20 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                Your Trusted Guide Through Pregnancy
+            </h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                Comprehensive, evidence-based information to empower your pregnancy journey.
+            </p>
+            <a href="#placenta-previa" class="bg-white text-sky-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
+                Explore Topics
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-sky-800 mb-4">About This Resource</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">
+                We provide clear, reliable information on various pregnancy-related health topics. Our goal is to help you understand your body and your baby's development, ensuring you feel confident and informed every step of the way.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white rounded-xl shadow-md transform transition-transform hover:scale-105">
+                    <div class="text-sky-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M13 7h-2v5H7v2h4v4h2v-4h4v-2h-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Evidence-Based</h3>
+                    <p class="text-gray-600">All information is sourced from reputable medical studies and publications.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md transform transition-transform hover:scale-105">
+                    <div class="text-sky-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.01c0 .55-.45.99-.99.99-.55 0-.99-.44-.99-.99s.44-.99.99-.99c.54.01.99.45.99.99zm-1.84-2.82c-.08-.49.33-.89.82-.93h.01c.49.04.9.44.98.93l.31 1.84c.08.49-.33.89-.82.93-.49-.04-.9-.44-.98-.93L8.16 14.19zM12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.01c0 .55-.45.99-.99.99-.55 0-.99-.44-.99-.99s.44-.99.99-.99c.54.01.99.45.99.99z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Easy to Understand</h3>
+                    <p class="text-gray-600">Complex medical information is simplified for everyone to comprehend.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md transform transition-transform hover:scale-105">
+                    <div class="text-sky-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Reliable</h3>
+                    <p class="text-gray-600">We aim to be a dependable source for all your pregnancy health questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placenta Previa Main Section -->
+    <section id="placenta-previa" class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-sky-800 mb-8">Understanding Placenta Previa</h2>
+            <img src="https://placehold.co/1200x400/38bdf8/ffffff?text=Understanding+Placenta+Previa" alt="An illustration of placenta previa" class="w-full rounded-xl shadow-lg mb-8 fade-in-section is-visible">
+        </div>
+    </section>
+
+    <!-- Pathology Section -->
+    <section id="pathology" class="py-16 px-4 bg-sky-50 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Pathology</h3>
+            <p class="text-lg text-gray-700 mb-4">
+                Placenta previa is a complication during pregnancy that affects around 5.2 out of every 1,000 pregnancies. It is marked by the placenta being positioned in such a way that it either partially or fully obstructs the cervical opening. This condition can be categorized into four different types: low-lying, marginal, partial, and complete placenta previa (Jenabi et al., 2022).
+            </p>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Jenabi, E., Salimi, Z., Bashirian, S., Khazaei, S., & Ayubi, E. (2022). The risk factors associated with placenta previa: An umbrella review. Placenta, 117, 21-27.
+            </p>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section id="assessment" class="py-16 px-4 bg-white fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Assessment</h3>
+            <p class="text-lg text-gray-700 mb-2">
+                According to Anderson-Bagga and Sze (2023), gathering a patient's history is an essential step in assessing for placenta previa, as it helps to identify key risk factors associated with the condition. These include:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Advanced maternal age (over 35 years old)</li>
+                <li>Multiparity (having had multiple previous pregnancies)</li>
+                <li>A history of smoking or cocaine use</li>
+                <li>A history of curettage or previous caesarean sections</li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-2">
+                Reference: Anderson-Bagga, F. M., & Sze, A. (2023, June 12). Placenta previa. Europe PMC.
+            </p>
+            <p class="text-lg text-gray-700 mb-4">
+                Observation of placenta previa’s key manifestations will help to guide diagnosis and treatment. A key sign of placenta previa is vaginal bleeding that is bright red and not accompanied by pain. This bleeding can become more severe as the pregnancy nears term, and the cervix starts to prepare for labor by effacing and dilating (Keenan-Lindsay, 2024).
+            </p>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Keenan-Lindsay, L. (2024). Leifer’s introduction to maternity and pediatric nursing in Canada (2nd ed). Elsevier.
+            </p>
+        </div>
+    </section>
+
+    <!-- Complications Section -->
+    <section id="complications" class="py-16 px-4 bg-sky-50 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Complications of Placenta Previa</h3>
+            <p class="text-lg text-gray-700 mb-2">
+                The specific reason for placenta previa is still not clearly understood; however, it is linked to a variety of negative effects on both the mother and fetus. Some of these effects include:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Atypical placental attachment</li>
+                <li>Bleeding occurring before or after birth</li>
+                <li>Abnormal positioning of the fetus</li>
+                <li>Limited fetal growth</li>
+                <li>Thrombophlebitis</li>
+                <li>Early onset of labor</li>
+                <li>Heightened chance of infections, such as septicemia (Jenabi et al., 2022)</li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Jenabi, E., Salimi, Z., Bashirian, S., Khazaei, S., & Ayubi, E. (2022). The risk factors associated with placenta previa: An umbrella review. Placenta, 117, 21-27.
+            </p>
+        </div>
+    </section>
+
+    <!-- Diagnostic Tests Section -->
+    <section id="diagnostic-tests" class="py-16 px-4 bg-white fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Diagnostic Tests</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>
+                    <span class="font-semibold">Routine ultrasound examination:</span> Keenan-Lindsay (2024) mentioned that routine ultrasound examination can be used to identify low-lying placenta in early pregnancy.
+                </li>
+                <li>
+                    <span class="font-semibold">Transabdominal and transvaginal ultrasound:</span> If you have vaginal bleeding during your pregnancy, you'll first get an ultrasound on your belly (transabdominal ultrasound). If there's a concern about placenta previa, a more accurate and safe vaginal ultrasound (transvaginal ultrasound) will be performed to confirm the placenta's exact location (Anderson-Bagga and Sze, 2023).
+                </li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                References: Keenan-Lindsay, L. (2024). Leifer’s introduction to maternity and pediatric nursing in Canada (2nd ed). Elsevier. | Anderson-Bagga, F. M., & Sze, A. (2023, June 12). Placenta previa. Europe PMC.
+            </p>
+        </div>
+    </section>
+
+    <!-- Nursing Intervention Section -->
+    <section id="nursing-interventions" class="py-16 px-4 bg-sky-50 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Nursing Interventions</h3>
+            <p class="text-lg text-gray-700 mb-4">
+                When placenta previa is present, close monitoring of both the mother and baby is essential. This allows nurses to promptly identify any changes and ensure their well-being.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>
+                    Continuous monitoring of the fetal heart rate and uterine contractions (Keenan-Lindsay, 2024). This will allow nurses to detect signs of any fetal distress and identify any changes in the mother’s condition.
+                </li>
+                <li>
+                    Nurses have a crucial role in monitoring and reporting any vaginal bleeding, along with documenting signs of shock. During active bleeding, they must check a patient's vital signs every 15 minutes (Keenan-Lindsay, 2024).
+                </li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Keenan-Lindsay, L. (2024). Leifer’s introduction to maternity and pediatric nursing in Canada (2nd ed). Elsevier.
+            </p>
+        </div>
+    </section>
+
+    <!-- Medical Interventions Section -->
+    <section id="medical-interventions" class="py-16 px-4 bg-white fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Relevant Medical Interventions</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>
+                    <span class="font-semibold">Cesarean section:</span> When placenta previa is diagnosed, a Cesarean section is the planned delivery method, usually scheduled between 36 and 37 weeks. However, an emergency Cesarean section will be performed earlier if the patient experiences excessive or constant bleeding.
+                </li>
+                <li>
+                    <span class="font-semibold">Blood transfusion:</span> Excessive bleeding can occur in placenta previa, and blood transfusions are a crucial intervention to manage blood loss. In case of significant bleeding, a patient should be prepared for a potential blood transfusion by having two large intravenous lines inserted and 2 to 4 units of blood "crossed and matched" and on standby.
+                </li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Anderson-Bagga, F. M., & Sze, A. (2023, June 12). Placenta previa. Europe PMC.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pharmacology Section -->
+    <section id="pharmacology" class="py-16 px-4 bg-sky-50 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Pharmacology</h3>
+            <p class="text-lg text-gray-700 mb-4">
+                Pharmacological medications are used to treat the condition, going from least to most severe.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>
+                    <span class="font-semibold">Iron supplements and Folic Acid:</span> to treat or prevent anemia from blood loss during bleeding episodes.
+                </li>
+                <li>
+                    <span class="font-semibold">Corticosteroids:</span> to accelerate fetal lung maturity if early delivery is anticipated.
+                </li>
+                <li>
+                    <span class="font-semibold">Tocolytics:</span> may be considered in cases of mild bleeding and uterine contractions to delay labour.
+                </li>
+                <li>
+                    <span class="font-semibold">Blood Products/transfusion:</span> in cases of severe bleeding.
+                </li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Watts, N. (2020). Nursing care of patients with complications during pregnancy. In L. Keenan-Lindsay. (Ed.), Leifer’s introduction to maternity and pediatric nursing in Canada (1st ed., pp. 420-549). Elsevier.
+            </p>
+        </div>
+    </section>
+
+    <!-- Determinants of Health Section -->
+    <section id="determinants-of-health" class="py-16 px-4 bg-white fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Determinants of Health</h3>
+            <p class="text-lg text-gray-700 mb-4">
+                The patient's education and social environment can significantly affect their care. For example, a patient like Brittany who struggles with medical terminology and relies on online forums for information requires a tailored approach.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>
+                    <span class="font-semibold">Education and literacy:</span> Use simple, clear language and avoid medical jargon. Confirm comprehension using the teach-back method and provide accessible learning tools.
+                </li>
+                <li>
+                    <span class="font-semibold">Social environment:</span> Build trust through empathy and non-judgmental communication. Correct misinformation respectfully and connect the patient to reliable community support.
+                </li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Keenan-Lindsay, L. (2020). Overview of Perinatal and pediatric nursing in Canada. In L. Keenan-Lindsay. (Ed.), Leifer’s introduction to maternity and pediatric nursing in Canada (1st ed., pp. 52-122). Elsevier.
+            </p>
+        </div>
+    </section>
+
+    <!-- Priority Teaching Section -->
+    <section id="priority-teaching" class="py-16 px-4 bg-sky-50 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Priority Teaching for Patients</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Instruct the patient to do left side lying and to use a pillow on their right hip when lying on their back.</li>
+                <li>Contact the doctor for any amount of bleeding, especially if it is bright red.</li>
+                <li>Bed rest is important. Avoid sexual intercourse, tampons, or heavy lifting.</li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Keenan-Lindsay, L., & Leifer, G., (2023). Leifer's introduction to maternity and pediatric nursing in Canada . (2nd Ed.). Elsevier.
+            </p>
+        </div>
+    </section>
+
+    <!-- Relevant Resources Section -->
+    <section id="relevant-resources" class="py-16 px-4 bg-white fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Relevant Resources</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>The Society of Obstetricians and Gynaecologist of Canada website for information on complications like placenta previa.</li>
+                <li>A direct relationship with a Maternal–Fetal Medicine Specialist.</li>
+                <li>Community support groups.</li>
+            </ul>
+            <p class="text-sm text-gray-500 mb-8">
+                Reference: Society of Obstetricians and Gynaecologists of Canada. (2023). Placenta previa.
+            </p>
+        </div>
+    </section>
+
+    <!-- Resources Section (old one, keeping for variety) -->
+   <!-- <section id="resources" class="py-16 px-4 fade-in-section">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-sky-800 mb-8">Additional Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-2">Understanding Your Trimesters</h3>
+                    <p class="text-gray-600 mb-4">
+                        Learn what to expect during each stage of your pregnancy, from the first trimester to delivery.
+                    </p>
+                    <a href="#" class="text-sky-600 hover:underline font-medium">Read More &rarr;</a>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-2">Nutrition Guide for Expecting Mothers</h3>
+                    <p class="text-gray-600 mb-4">
+                        Discover the essential nutrients and dietary tips to support a healthy pregnancy.
+                    </p>
+                    <a href="#" class="text-sky-600 hover:underline font-medium">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-800 text-white py-16 px-4 fade-in-section">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Have Questions? Get In Touch</h2>
+            <p class="text-lg mb-8 opacity-80">
+                While we can't provide medical advice, we can guide you to reputable resources.
+            </p>
+            <form class="space-y-4 max-w-md mx-auto">
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300">
+                <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300">
+                <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300"></textarea>
+                <button type="submit" class="w-full bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-700 transition-all duration-300 transform hover:scale-105">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-4 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Pregnancy Health Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for scroll-based animation -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // We can stop observing once it's visible if we only want it to happen once
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
