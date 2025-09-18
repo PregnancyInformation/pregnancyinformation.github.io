@@ -70,6 +70,26 @@
             transform: translateY(0);
             transition-delay: 0.6s;
         }
+
+        /* Basic styling for the dropdown */
+        .dropdown summary {
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown summary:hover {
+            background-color: #f3f4f6;
+        }
+
+        .dropdown details[open] summary {
+            background-color: #f3f4f6;
+        }
+        
+        .dropdown-menu {
+            padding-top: 0.5rem;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -77,13 +97,36 @@
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-teal-500">
+            <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="text-2xl font-bold text-teal-500 cursor-pointer">
                 Pregnancy Health Hub
-            </div>
-            <nav class="hidden md:flex space-x-6">
+            </a>
+            <nav class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">About</a>
-                <a href="#placenta-previa" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">Placenta Previa</a>
-                <a href="#resources" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">Resources</a>
+                
+                <div class="relative dropdown">
+                    <details class="group">
+                        <summary class="flex items-center justify-between text-gray-600 hover:text-teal-500 transition-colors duration-300 py-3 px-4">
+                            Placenta Previa
+                            <svg class="h-4 w-4 ml-2 transform group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#pathology" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Pathology</a>
+                            <a href="#assessment" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Assessment</a>
+                            <a href="#complications" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Complications</a>
+                            <a href="#diagnostic-tests" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Diagnostic Tests</a>
+                            <a href="#nursing-interventions" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Nursing Interventions</a>
+                            <a href="#medical-interventions" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Medical Interventions</a>
+                            <a href="#pharmacology" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Pharmacology</a>
+                            <a href="#determinants-of-health" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Determinants of Health</a>
+                            <a href="#priority-teaching" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200">Priority Teaching</a>
+                        </div>
+                    </details>
+                </div>
+
+                <a href="#relevant-resources" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">Resources</a>
+                <a href="#references" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">References</a>
                 <a href="#contact" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">Contact</a>
             </nav>
             <button class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
@@ -150,8 +193,8 @@
     <section id="placenta-previa" class="py-16 px-4 bg-pink-50 ">
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-3xl font-bold text-center text-purple-700 mb-8">Understanding Placenta Previa</h2>
-            <img src="https://github.com/pregnancyinformation/pregnancyinformation.github.io/blob/main/Placenta%20Previa%202020.jpeg?raw=true" alt="An illustration of placenta previa" class="w-full rounded-xl shadow-lg mb-8 fade-in-section is-visible">
-               (Ireland, 2014)
+            <img src="https://github.com/pregnancyinformation/pregnancyinformation.github.io/blob/main/Placenta%20Previa%202020.jpeg?raw=true" alt="An illustration of placenta previa" class="w-full rounded-xl shadow-lg mb-2 fade-in-section is-visible">
+            <p class="text-sm text-gray-500 mb-8">(Ireland, 2014)</p>
         </div>
         
     </section>
@@ -216,8 +259,8 @@
                     <span class="font-semibold">Transabdominal and transvaginal ultrasound:</span> If you have vaginal bleeding during your pregnancy, you'll first get an ultrasound on your belly (transabdominal ultrasound). If there's a concern about placenta previa, a more accurate and safe vaginal ultrasound (transvaginal ultrasound) will be performed to confirm the placenta's exact location (Anderson-Bagga and Sze, 2023).
                 </li>
             </ul>
-            <img src="https://github.com/pregnancyinformation/pregnancyinformation.github.io/blob/main/IMG_8489.jpeg?raw=true" alt="Diagram showing the different types of placenta previa: complete, partial, and marginal." class="w-full rounded-xl shadow-lg mb-8 fade-in-section is-visible">
-           (MacGuire, n.d.) 
+            <img src="https://github.com/pregnancyinformation/pregnancyinformation.github.io/blob/main/IMG_8489.jpeg?raw=true" alt="Diagram showing the different types of placenta previa: complete, partial, and marginal." class="w-full rounded-xl shadow-lg mb-2 fade-in-section is-visible">
+            <p class="text-sm text-gray-500 mb-8">(MacGuire, n.d.)</p>
         </div>
     </section>
 
@@ -258,7 +301,7 @@
                     <span class="font-semibold">Corticosteroids:</span> to accelerate fetal lung maturity if early delivery is anticipated. The goal is to maintain the pregnancy until the fetal lungs are mature enough to decrease the risk of respiration distress (Watts, 2020, p. 451).
                 </li>
                 <li>
-                    <span class="font-semibold">Tocolytics:</span> may be considered in cases of mild bleeding and uterine contractions to delay labour. The primary goal of tocolytic here is to stop contractions long enough to enable one or two doses of glucocorticosteroids to work and help mature the baby’s lungs, usually 24 to 48 hours prior to birth (Watts, 2020, p. 764). However, because tocolytic drugs can have adverse effects, the nurse must closely monitor both the mother and fetus during treatment (Watts, 2020, pg. 847).
+                    <span class="font-semibold">Tocolytics:</span> may be considered in cases of mild bleeding and uterine contractions to delay labour. The primary goal of tocolytic here is to stop contractions long enough to enable one or two doses of glucocorticosteroids to work and help mature the baby’s lungs, usually 24 to 48 hours prior to birth (Watts, 2020). However, because tocolytic drugs can have adverse effects, the nurse must closely monitor both the mother and fetus during treatment (Watts, 2020).
                 </li>
                 <li>
                     <span class="font-semibold">Blood Products/transfusion:</span> in cases of severe bleeding. Placenta previa can cause sudden and heavy bleeding (hemorrhage), which may lead to anemia or hypovolemic shock. To manage severe anemia or significant blood loss.
