@@ -129,13 +129,53 @@
                 <a href="#references" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">References</a>
                 <a href="#contact" class="text-gray-600 hover:text-teal-500 transition-colors duration-300">Contact</a>
             </nav>
-            <button class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-end p-4">
+            <button id="close-mobile-menu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center space-y-6 text-xl p-8">
+            <a href="#about" class="text-gray-600 hover:text-teal-500 transition-colors duration-300" onclick="hideMobileMenu()">About</a>
+            
+            <div class="w-full relative dropdown text-center">
+                <details class="group">
+                    <summary class="flex items-center justify-center text-gray-600 hover:text-teal-500 transition-colors duration-300 py-3 px-4">
+                        Placenta Previa
+                        <svg class="h-4 w-4 ml-2 transform group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="dropdown-menu mt-2 w-full bg-white rounded-md shadow-lg py-1 z-50">
+                        <a href="#pathology" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Pathology</a>
+                        <a href="#assessment" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Assessment</a>
+                        <a href="#complications" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Complications</a>
+                        <a href="#diagnostic-tests" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Diagnostic Tests</a>
+                        <a href="#nursing-interventions" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Nursing Interventions</a>
+                        <a href="#medical-interventions" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Medical Interventions</a>
+                        <a href="#pharmacology" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Pharmacology</a>
+                        <a href="#determinants-of-health" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Determinants of Health</a>
+                        <a href="#priority-teaching" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors duration-200" onclick="hideMobileMenu()">Priority Teaching</a>
+                    </div>
+                </details>
+            </div>
+
+            <a href="#relevant-resources" class="text-gray-600 hover:text-teal-500 transition-colors duration-300" onclick="hideMobileMenu()">Resources</a>
+            <a href="#references" class="text-gray-600 hover:text-teal-500 transition-colors duration-300" onclick="hideMobileMenu()">References</a>
+            <a href="#contact" class="text-gray-600 hover:text-teal-500 transition-colors duration-300" onclick="hideMobileMenu()">Contact</a>
+        </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative py-20 px-4 text-center bg-cover bg-center" style="background-image: url('https://github.com/pregnancyinformation/pregnancyinformation.github.io/blob/main/Hate%20Going%20to%20OB%20Hero%20Image.webp?raw=true'); background-repeat: no-repeat;">
@@ -163,8 +203,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="p-6 bg-white rounded-xl shadow-md transform transition-transform hover:scale-105">
                     <div class="text-pink-500 mb-4">
-                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32.158 32.158" xml:space="preserve" stroke="#ee95bc"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M32.098,8.075C31.151-2.484,18.163,0.622,16.08,6.629C13.996,0.622,1.008-2.484,0.062,8.075 C-1.153,21.658,16.08,29.618,16.08,29.618s2.555-1.185,5.625-3.409c-0.218,0.019-0.435,0.05-0.652,0.05h-0.002 c-3.24,0-6.256-1.74-7.87-4.539c-1.21-2.093-1.53-4.537-0.902-6.881c0.628-2.344,2.128-4.301,4.225-5.511 c1.375-0.794,2.939-1.214,4.523-1.214c3.24,0,6.258,1.738,7.871,4.535c0.808,1.397,1.209,2.951,1.207,4.525 C31.553,14.517,32.399,11.472,32.098,8.075z"></path> <path d="M27.6,13.398c-2.088-3.617-6.73-4.858-10.348-2.772c-3.616,2.088-4.86,6.729-2.771,10.345 c2.088,3.621,6.729,4.86,10.347,2.772C28.442,21.658,29.687,17.015,27.6,13.398z M24.199,22.662 c-3.019,1.746-6.89,0.702-8.632-2.315c-1.746-3.02-0.707-6.891,2.312-8.634c3.02-1.74,6.893-0.702,8.637,2.316 C28.255,17.046,27.221,20.917,24.199,22.662z"></path> <path d="M23.474,25.161l3.256-1.882l2.508,4.339l-3.257,1.883L23.474,25.161z M26.317,30.093c0.521,0.901,1.672,1.207,2.57,0.689 c0.898-0.519,1.207-1.669,0.688-2.57L26.317,30.093z"></path> </g> </g> </g></svg>                        </svg>
+                        <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 32.158 32.158" xmlns="http://www.w3.org/2000/svg" stroke="#ee95bc"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M32.098,8.075C31.151-2.484,18.163,0.622,16.08,6.629C13.996,0.622,1.008-2.484,0.062,8.075 C-1.153,21.658,16.08,29.618,16.08,29.618s2.555-1.185,5.625-3.409c-0.218,0.019-0.435,0.05-0.652,0.05h-0.002 c-3.24,0-6.256-1.74-7.87-4.539c-1.21-2.093-1.53-4.537-0.902-6.881c0.628-2.344,2.128-4.301,4.225-5.511 c1.375-0.794,2.939-1.214,4.523-1.214c3.24,0,6.258,1.738,7.871,4.535c0.808,1.397,1.209,2.951,1.207,4.525 C31.553,14.517,32.399,11.472,32.098,8.075z"></path> <path d="M27.6,13.398c-2.088-3.617-6.73-4.858-10.348-2.772c-3.616,2.088-4.86,6.729-2.771,10.345 c2.088,3.621,6.729,4.86,10.347,2.772C28.442,21.658,29.687,17.015,27.6,13.398z M24.199,22.662 c-3.019,1.746-6.89,0.702-8.632-2.315c-1.746-3.02-0.707-6.891,2.312-8.634c3.02-1.74,6.893-0.702,8.637,2.316 C28.255,17.046,27.221,20.917,24.199,22.662z"></path> <path d="M23.474,25.161l3.256-1.882l2.508,4.339l-3.257,1.883L23.474,25.161z M26.317,30.093c0.521,0.901,1.672,1.207,2.57,0.689 c0.898-0.519,1.207-1.669,0.688-2.57L26.317,30.093z"></path> </g> </g> </g></svg>                        </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Evidence-Based</h3>
                     <p class="text-base text-gray-600">All information is sourced from reputable medical studies and publications.</p>
@@ -429,6 +468,30 @@
 
         document.querySelectorAll('.fade-in-section').forEach(section => {
             observer.observe(section);
+        });
+
+        // JavaScript for mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
+
+        function showMobileMenu() {
+            mobileMenu.classList.remove('-translate-x-full');
+            document.body.style.overflow = 'hidden'; // Prevents scrolling
+        }
+
+        function hideMobileMenu() {
+            mobileMenu.classList.add('-translate-x-full');
+            document.body.style.overflow = ''; // Re-enables scrolling
+        }
+
+        mobileMenuButton.addEventListener('click', showMobileMenu);
+        closeMobileMenuButton.addEventListener('click', hideMobileMenu);
+
+        // Close menu when a link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', hideMobileMenu);
         });
     </script>
 </body>
